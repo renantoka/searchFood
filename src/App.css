@@ -1,12 +1,16 @@
 .App {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 40px 24px;
+  border: 2px solid green;
 }
 
 .app__searchForm {
   margin-top: 18px;
+  align-items: top;
+  text-align: center;
 }
 
 .app__input {
@@ -17,6 +21,34 @@
 }
 
 .app__submit {
+  padding: 6px 16px;
+  font-size: 15px;
+  margin-left: 6px;
+  background-color: #FFBA08;
+  border: 2px solid #FFBA08;
+  border-radius: 4px;
+  color: #ffff;
+}
+
+.app__submit:hover {
+  padding: 6px 16px;
+  font-size: 15px;
+  margin-left: 6px;
+  background-color: #ffff;
+  border: 2px solid #FFBA08;
+  border-radius: 4px;
+  color: #FFBA08;
+}
+
+.app__meals {
+  margin-top: 24px;
+  display: grid;
+  border: 3px solid blue;
+  grid-template-columns: 250px 250px;
+  align-items: baseline;
+}
+
+.app_labels {
   padding: 6px 16px;
   font-size: 15px;
   margin-left: 6px;
