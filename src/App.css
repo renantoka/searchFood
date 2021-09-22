@@ -48,12 +48,10 @@
   align-items: baseline;
 }
 
-.app_labels {
-  padding: 6px 16px;
+.app__labels {
+  padding: 7px 8px;
   font-size: 15px;
   margin-left: 6px;
-  background-color: #FFBA08;
   border: 2px solid #FFBA08;
   border-radius: 4px;
-  color: #ffff;
 }

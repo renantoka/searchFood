@@ -7,9 +7,8 @@ import Label from "./pages/Label";
 function App() {
   const [query, setQuery] = useState("");
   const [meals, setMeals] = useState([]);
-  const [label, setLabel] = useState([]);
 
-  let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
+  let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}&strCategory=${Label}`;
 
   async function getMeals() {
     let result = await axios.get(url);
@@ -27,7 +26,9 @@ function App() {
     getMeals()
     return () => {
     }
-  }, [])
+  }, []);
+
+
 
   return (
     <div className="App">
