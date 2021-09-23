@@ -6,7 +6,10 @@ import Label from "./pages/Label";
 
 function App() {
   const [query, setQuery] = useState("");
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([]);/* 
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8); */
 
   let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}&strCategory=${Label}`;
 
@@ -23,13 +26,20 @@ function App() {
   };
 
   useEffect(() => {
-    getMeals()
-    return () => {
-    }
+    getMeals();
+    return () => {};
   }, []);
 
-
-
+ /*  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get(url);
+      setPostsPerPage(res.data);
+      setLoading(false);
+    }
+    fetchPosts();
+  }, []);
+ */
   return (
     <div className="Container">
       <div className="App">
@@ -43,19 +53,12 @@ function App() {
           />
           <input className="app__submit" type="submit" value="search" />
 
-          <select className="app__labels">
-            {meals.map((meal) => (
-              <Label meal={meal} />
-            ))}
-          </select>
         </form>
 
         <div className="app__meals">
-
           {meals.map((meal) => {
             return <RecipeTile meal={meal} />;
           })}
-
         </div>
       </div>
     </div>

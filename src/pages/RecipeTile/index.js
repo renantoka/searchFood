@@ -24,11 +24,11 @@ export default function RecipeTile({ meal }) {
         src={meal.strMealThumb}
         alt="img not found"
       />
-      <p className="recipeTile__name">{meal.strMeal}</p>
-      <p className="recipeTile__category">{meal.strCategory}</p>
-      <p className="recipeTile__area">{meal.strArea}</p>
+      <p className="recipeTile__name">Name: {meal.strMeal}</p>
+      <p className="recipeTile__category">Category: {meal.strCategory}</p>
+      <p>From: </p><p className="recipeTile__area"> {meal.strArea}</p>
       <div id="results" className="search-results"></div>
-      <button onClick={() => setShowInstructions(!showInstructions)}>
+      <button className="recipeTile__button" onClick={() => setShowInstructions(!showInstructions)}>
         {showInstructions ? 'hide instructions' : 'show instructions'}
       </button>
       {showInstructions && <p className="recipeTile__instructions">{meal.strInstructions}</p>}
