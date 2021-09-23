@@ -31,28 +31,32 @@ function App() {
 
 
   return (
-    <div className="App">
-      <form className="app__searchForm" onSubmit={onSubmit}>
-        <input
-          className="app__input"
-          type="text"
-          placeholder="enter search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <input className="app__submit" type="submit" value="search" />
+    <div className="Container">
+      <div className="App">
+        <form className="app__searchForm" onSubmit={onSubmit}>
+          <input
+            className="app__input"
+            type="text"
+            placeholder="enter search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input className="app__submit" type="submit" value="search" />
 
-        <select className="app__labels">
-          {meals.map((meal) => (
-            <Label meal={meal} />
-          ))}
-        </select>
-      </form>
+          <select className="app__labels">
+            {meals.map((meal) => (
+              <Label meal={meal} />
+            ))}
+          </select>
+        </form>
 
-      <div className="app__meals">
-        {meals.map((meal) => {
-          return <RecipeTile meal={meal} />;
-        })}
+        <div className="app__meals">
+
+          {meals.map((meal) => {
+            return <RecipeTile meal={meal} />;
+          })}
+
+        </div>
       </div>
     </div>
   );
